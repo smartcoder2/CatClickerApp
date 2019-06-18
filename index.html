@@ -1,59 +1,67 @@
 <html>
-   <head>
-      <link rel="stylesheet" href="styles\style.css" />
-   </head>
-   <body>
-      <div class="outer-box">
-         <div class="item1"></div>
-         <div class="item2">
-            <label class="paylabel" for="select-cat">Select a cat</label>
-            <select id="select-cat" name="cats" onchange="validate()">
-               <option value="Tom">Tom</option>
-               <option value="Jack">Jack</option>
-               <option value="Zoe">Zoe</option>
-               <option value="Simba">Simba</option>
-               <option value="George">George</option>
-            </select>
-            <br/>
-         </div>
-         <div class="item3"></div>
-         <div class="item4"></div>
-         <img id="cat-image" src="images\tom.jpg" alt="image not loaded" />
-         <div class="item6"></div>
-         <div class="item7"></div>
-         <div id="show-click-value">zero</div>
-         <div class="item9"></div>
+  <head>
+    <link rel="stylesheet" href="styles\style.css" />
+  </head>
+  <body>
+    <div class="outer-box">
+      <div class="item1"></div>
+      <div class="item2">
+        <label class="cat-label" for="select-cat">Select a cat</label>
+        <select id="select-cat" name="cats" onchange="validate()">
+          <option value="Tom">Tom</option>
+          <option value="Jack">Jack</option>
+          <option value="Zoe">Zoe</option>
+          <option value="Simba">Simba</option>
+          <option value="George">George</option>
+        </select>
+        <br />
       </div>
-      <!-- srr-to-do-later: position the image and other elements properly -->
-      <script>
-         const imageBasePath = "./images/";
-         const imageNameArrary = ["tom.jpg", "jack.jpeg", "zoe.jpeg" , "simba.jpg", "george.jpeg"];
-         let catScore = [0,0,0,0,0];  // this keeps the score of each cat. index of array determines the cat
-         let htmlUpdate;
-         let ddl;
-         const imageVar = document.getElementById("cat-image");
-         const textVar = document.getElementById("show-click-value");
-                  
-         imageVar.addEventListener("click", incrementClickVar);
-         
-         function incrementClickVar()
-            {
-            ddl = document.getElementById("select-cat");     
-            catScore[ddl.selectedIndex]++ ;
-            htmlUpdate = (catScore[ddl.selectedIndex] == 0) ? "zero" : catScore[ddl.selectedIndex];
-            textVar.innerHTML = htmlUpdate;
+      <div class="item3"></div>
+      <div class="item4"></div>
+      <img id="cat-image" src="images\tom.jpg" alt="image not loaded" />
+      <div class="item6"></div>
+      <div class="item7"></div>
+      <div id="show-click-value">zero</div>
+      <div class="item9"></div>
+    </div>
+    <!-- srr-to-do-later: position the image and other elements properly -->
+    <script>
+      const imageBasePath = "./images/";
+      const imageNameArrary = [
+        "tom.jpg",
+        "jack.jpeg",
+        "zoe.jpeg",
+        "simba.jpg",
+        "george.jpeg"
+      ];
+      let catScore = [0, 0, 0, 0, 0]; // this keeps the score of each cat. index of array determines the cat
+      let htmlUpdate;
+      let ddl;
+      const imageVar = document.getElementById("cat-image");
+      const textVar = document.getElementById("show-click-value");
 
-            }
-         function validate()
-            {
+      imageVar.addEventListener("click", incrementClickVar);
 
-            htmlUpdate = (catScore[ddl.selectedIndex] == 0) ? "zero" : catScore[ddl.selectedIndex];
-            textVar.innerHTML = htmlUpdate;  
-            //  ddl = document.getElementById("select-cat");
-             let selectedValue = ddl.options[ddl.selectedIndex].value;
-             imageVar.src = imageBasePath + imageNameArrary[ddl.selectedIndex];
-            }      
-         
-      </script>
-   </body>
+      function incrementClickVar() {
+        ddl = document.getElementById("select-cat");
+        catScore[ddl.selectedIndex]++;
+        htmlUpdate =
+          catScore[ddl.selectedIndex] == 0
+            ? "zero"
+            : catScore[ddl.selectedIndex];
+        textVar.innerHTML = htmlUpdate;
+        //
+      }
+      function validate() {
+        ddl = document.getElementById("select-cat");
+        htmlUpdate =
+          catScore[ddl.selectedIndex] == 0
+            ? "zero"
+            : catScore[ddl.selectedIndex];
+        textVar.innerHTML = htmlUpdate;
+        let selectedValue = ddl.options[ddl.selectedIndex].value;
+        imageVar.src = imageBasePath + imageNameArrary[ddl.selectedIndex];
+      }
+    </script>
+  </body>
 </html>
