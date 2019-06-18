@@ -1,28 +1,22 @@
-/* 
-
-=> image at right position
-=> show click value text at right position
-=> show click value text font adjust
-=> button position and font styling
-
-
-
-*/
 
 .outer-box {
   height: 100vh;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows:1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows:1fr 1fr 1fr;
   grid-gap: 2vw;
-  align-items:center
+  align-items:center;
+  
 }
 .outer-box > div,img {
   max-width: 25vw;
   min-height: 10vh;
+  max-height: 44vh;
+  justify-self: center;
 }
 .outer-box > div {
-  font-size: 6vh;
-  
   text-align: center;
+}
+#show-click-value{
+  font-size: 6vh;
 }

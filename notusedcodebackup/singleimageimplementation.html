@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles\style.css" />
+  </head>
+  <body>
+        <label class="paylabel" for="cardtype">Cats</label>
+        <select id="cardtype" name="cards">
+           <option value="selectcard">--- Please select ---</option>
+           <option value="Tom">Tom</option>
+           <option value="Jack">Jack</option>
+           <option value="Zoe">Zoe</option>
+           <option value="Simba">Simba</option>
+           <option value="George">George</option>
+        </select>
+        <br/>
+        <input type="button" onclick="validate()" value="click here">
+
+    <!-- srr-to-do-later: position the image and other elements properly -->
+    <img id="cat-image" src="images\cat-image-1.jpg" alt="image not loaded" />
+    <div id="show-click-value">zero</div>
+    <script>
+      let clickVar = 0;
+      const imageVar = document.getElementById("cat-image");
+      const textVar = document.getElementById("show-click-value");
+
+      imageVar.addEventListener("click", incrementClickVar);
+
+      function incrementClickVar() {
+        console.log(clickVar);
+        clickVar++;
+        textVar.innerHTML = clickVar;
+      }
+      function validate()
+         {
+          var ddl = document.getElementById("cardtype");
+          var selectedValue = ddl.options[ddl.selectedIndex].value;
+             if (selectedValue == "selectcard")
+            {
+             alert("Please select a cat");
+            }
+         }      
+
+    </script>
+  </body>
+</html>
