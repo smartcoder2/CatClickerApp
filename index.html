@@ -3,21 +3,69 @@
     <link rel="stylesheet" href="styles\style.css" />
   </head>
   <body>
+
     <!-- srr-to-do-later: position the image and other elements properly -->
-    <img id="cat-image" src="images\cat-image-1.jpg" alt="image not loaded" />
-    <div id="show-click-value">zero</div>
+
+    <div class="outer-box">
+    
+      <div class="item1"></div>
+      <div id="cat-name-1" class="item2">cat-name-1</div>
+      <div id="cat-name-2" class="item3">cat-name-2</div>
+      <div class="item4"></div>
+
+      <div class="item5"></div>
+      <img
+        id="cat-image-1"
+        src="images\cat-image-1.jpg"
+        alt="image not loaded"
+      />
+      <img
+        id="cat-image-2"
+        src="images\cat-image-2.jpg"
+        alt="image not loaded"
+      />
+      <div class="item8"></div>
+
+      <div class="item9"></div>
+      <div id="show-click-value1" class="item10">zero</div>
+      <div id="show-click-value2" class="item11">zero</div>
+      <div class="item12"></div>
+
+      <div class="bottomrow"></div>
+      <div class="bottomrow"></div>
+      <div class="bottomrow"></div>
+      <div class="bottomrow"></div>
+
+      </div>
+
     <script>
-      let clickVar = 0;
-      const imageVar = document.getElementById("cat-image");
-      const textVar = document.getElementById("show-click-value");
 
-      imageVar.addEventListener("click", incrementClickVar);
+      let clickVar1 = 0;
+      let clickVar2 = 0;
+      let cat1NameVar = "Tom";
+      let cat2NameVar = "Jack";
 
-      function incrementClickVar() {
-        console.log(clickVar);
-        clickVar++;
-        textVar.innerHTML = clickVar;
+      document.getElementById("cat-name-1").innerHTML = cat1NameVar;
+      document.getElementById("cat-name-2").innerHTML = cat2NameVar;
+      const imageVar1 = document.getElementById("cat-image-1");
+      const imageVar2 = document.getElementById("cat-image-2");
+      const textVar1 = document.getElementById("show-click-value1");
+      const textVar2 = document.getElementById("show-click-value2");
+
+      imageVar1.addEventListener("click", incrementClickVar1);
+      imageVar2.addEventListener("click", incrementClickVar2);
+
+      function incrementClickVar1() {
+        console.log(clickVar1);
+        clickVar1++;
+        textVar1.innerHTML = clickVar1;
       }
+      function incrementClickVar2() {
+        console.log(clickVar2);
+        clickVar2++;
+        textVar2.innerHTML = clickVar2;
+      }
+
     </script>
   </body>
 </html>

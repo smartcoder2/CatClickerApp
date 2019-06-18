@@ -9,18 +9,20 @@
 
 */
 
-img{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+.outer-box {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows:1fr 1fr 1fr 1fr;
+  grid-gap: 2vw;
+  align-items:center
 }
-
-#show-click-value{
-    position: absolute;
-    top: 50%;
-    left: 10%;
-    transform: translate(-50%, -50%);
-    font-size: 12vh;
-
+.outer-box > div,img {
+  max-width: 25vw;
+  min-height: 10vh;
+}
+.outer-box > div {
+  font-size: 6vh;
+  
+  text-align: center;
 }

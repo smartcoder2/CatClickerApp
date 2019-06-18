@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles\style.css" />
+  </head>
+  <body>
+    <div class="grid-box">
+      <!-- srr-to-do-later: position the image and other elements properly -->
+
+      <div></div>
+      <div>catname1</div>
+      <div>catname2</div>
+      <div></div>
+
+      <div></div>
+      <img
+        id="cat-image-1"
+        src="images\cat-image-1.jpg"
+        alt="image not loaded"
+      />
+      <img
+        id="cat-image-2"
+        src="images\cat-image-2.jpg"
+        alt="image not loaded"
+      />
+      <div></div>
+
+      <div></div>
+      <div></div>
+      <div id="show-click-value">zero</div>
+      <div></div>
+    </div>
+
+    <script>
+      let clickVar = 0;
+      const imageVar = document.getElementById("cat-image-1");
+      const textVar = document.getElementById("show-click-value");
+
+      imageVar.addEventListener("click", incrementClickVar);
+
+      function incrementClickVar() {
+        console.log(clickVar);
+        clickVar++;
+        textVar.innerHTML = clickVar;
+      }
+    </script>
+  </body>
+</html>
