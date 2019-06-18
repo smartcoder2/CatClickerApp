@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="styles\style.css" />
+  </head>
+  <body>
+    <!-- srr-to-do-later: position the image and other elements properly -->
+    <img id="cat-image" src="images\cat-image.jpg" alt="image not loaded" />
+    <div id="show-click-value">zero</div>
+    <script>
+      let clickVar = 0;
+      const imageVar = document.querySelector("img");
+      
+      imageVar.addEventListener("click", incrementClickVar);
+
+      function incrementClickVar() {
+        clickVar++;
+        document.getElementById("show-click-value").innerHTML = +clickVar;
+
+      }
+    </script>
+  </body>
+</html>

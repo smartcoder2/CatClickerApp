@@ -1,0 +1,26 @@
+/* 
+
+=> image at right position
+=> show click value text at right position
+=> show click value text font adjust
+=> button position and font styling
+
+
+
+*/
+
+img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#show-click-value{
+    position: absolute;
+    top: 50%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    font-size: 12vh;
+
+}
